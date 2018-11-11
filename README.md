@@ -17,9 +17,8 @@ stop words.\\
 
 1. [ ] As a first step, compare the following two methods for WSD:
 
-1.1 [ ] The most frequent sense baseline: this is the sense indicated as #1 in the synset according to
-WordNet
-1.2 [ ] NLTK's implementation of Lesk's algorithm (nltk.wsd.lesk) Use accuracy as the evaluation measure. There is sometimes more than one correct sense annotated in the key. If that is the case, you may consider an automatic system correct if it resolves the word to any one of those senses. What do you observe about the results?
+    1. [ ] The most frequent sense baseline: this is the sense indicated as #1 in the synset according toWordNet
+    2. [ ] NLTK's implementation of Lesk's algorithm (nltk.wsd.lesk) Use accuracy as the evaluation measure. There is sometimes more than one correct sense annotated in the key. If that is the case, you may consider an automatic system correct if it resolves the word to any one of those senses. What do you observe about the results?
 
 2. Develop two additional methods to solve this problem. 
 
