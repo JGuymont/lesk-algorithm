@@ -22,11 +22,11 @@ stop words.\\
 
 2. Develop two additional methods to solve this problem. 
 
-2.1 [ ] One of them must combine **distributional information** about the frequency of word senses, and the standard Lesk's algorithm. 
+    1. [ ] One of them must combine **distributional information** about the frequency of word senses, and the standard Lesk's algorithm. 
 
-2.2 [ ] The other may be any other method of your design. The two methods must be substantially different; they may not be simply the same method with a different parameter value. Make and justify decisions about any other parameters to the algorithms, such as what exactly to include in the sense and context representations, how to compute overlap, and how to trade of the distributional and the Lesk signal, with the use of the development set, which the starter code will load for you. You may use any heuristic, probabilistic model, or other statistical method that we have discussed in class in order to combine these two sources of information.
+    2. [ ] The other may be any other method of your design. The two methods must be substantially different; they may not be simply the same method with a different parameter value. Make and justify decisions about any other parameters to the algorithms, such as what exactly to include in the sense and context representations, how to compute overlap, and how to trade of the distributional and the Lesk signal, with the use of the development set, which the starter code will load for you. You may use any heuristic, probabilistic model, or other statistical method that we have discussed in class in order to combine these two sources of information.
 
-For the last method of your design, you may use external corpora or lexical resources if you wish (e.g., thesauri, or WordNet in other languages, etc.), though it is not required. Feel free to use your creativity to find ways to improve performance!
+    For the last method of your design, you may use external corpora or lexical resources if you wish (e.g., thesauri, or WordNet in other languages, etc.), though it is not required. Feel free to use your creativity to find ways to improve performance!
 
 Some issues and points to watch out for:
  The gold standard key presents solutions using lemma sense keys, which are distinct from the synset numbers that we have seen in class. You will need to convert between them to perform the evaluation. This [webpage](https://wordnet.princeton.edu/man/senseidx.5WN.html) explains what lemma sense keys are.
