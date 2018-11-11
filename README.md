@@ -17,7 +17,7 @@ stop words.\\
 
 1. [ ] As a first step, compare the following two methods for WSD:
 
-    1. [ ] The most frequent sense baseline: this is the sense indicated as #1 in the synset according toWordNet
+    1. [ ] The most frequent sense **baseline**: this is the sense indicated as #1 in the synset according toWordNet
     2. [ ] NLTK's implementation of Lesk's algorithm (nltk.wsd.lesk) Use accuracy as the evaluation measure. There is sometimes more than one correct sense annotated in the key. If that is the case, you may consider an automatic system correct if it resolves the word to any one of those senses. What do you observe about the results?
 
 2. Develop two additional methods to solve this problem. 
@@ -28,12 +28,12 @@ stop words.\\
 
     For the last method of your design, you may use external corpora or lexical resources if you wish (e.g., thesauri, or WordNet in other languages, etc.), though it is not required. Feel free to use your creativity to find ways to improve performance!
 
-Some issues and points to watch out for:
- The gold standard key presents solutions using lemma sense keys, which are distinct from the synset numbers that we have seen in class. You will need to convert between them to perform the evaluation. This [webpage](https://wordnet.princeton.edu/man/senseidx.5WN.html) explains what lemma sense keys are.
- The data set contains multi-word phrases, which should be resolved as one entity (e.g., latin america).
+**Some issues and points to watch out for:**
+1. The gold standard key presents solutions using lemma sense keys, which are distinct from the synset numbers that we have seen in class. You will need to convert between them to perform the evaluation. This [webpage](https://wordnet.princeton.edu/man/senseidx.5WN.html) explains what lemma sense keys are.
+2. The data set contains multi-word phrases, which should be resolved as one entity (e.g., latin america).
 Make sure that you are converting between underscores and spaces correctly, and check that you
 are dealing with upper- vs lower-case appropriately.
- We are using instances with id beginning with d001 as the dev set, and the remaining cases as the
+3. We are using instances with id beginning with d001 as the dev set, and the remaining cases as the
 test set, for simplicity. This is dierent from the setting in the original SemEval evaluation, so the
 results are not directly comparable.
 
