@@ -14,6 +14,7 @@ class WSDInstance:
         self.lemma = lemma      # lemma of the word whose sense is to be resolved
         self.context = context  # lemma of all the words in the sentential context
         self.index = index      # index of lemma within the context
+    
     def __str__(self):
         '''
         For printing purposes.

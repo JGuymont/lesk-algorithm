@@ -19,7 +19,7 @@ stopwords = [
     'having', "couldn't", 'himself', 'to', 'most', 'he', 'hadn', 'am', 'why', 
     "isn't", 'until', 'down', 'at', 'does', 'about', 'whom', 'being', 'out', 'in', 
     'won', 'your', 'and', "you'll", 'this', 'do', "needn't", 
-    'shouldn', 'on', 'yourselves', 
+    'shouldn', 'on', 'yourselves', "'s",
     
-    'want', 'another', 'other', 'such', 'make', 'one', 'in', 'into', 'take', 'due', 'get'
+    #'want', 'another', 'other', 'such', 'make', 'one', 'in', 'into', 'take', 'due', 'get', "''", ''
 ]
