@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry} 
 \usepackage{amsmath,amsthm,amssymb,amsfonts,bm}
 \usepackage{graphicx}
@@ -26,5 +26,134 @@
 \begin{document}
 
 \maketitle
+
+\section*{Question 1}
+
+(a) 
+
+\begin{equation}
+\begin{split}
+	(\lambda x. xx)(\lambda y. yx) z 
+	=& (\lambda y. y x) (\lambda y. y x) z\\
+	=& (\lambda y. y x) xz \\
+	=& xxz \\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+	(\lambda uvw.wvu)aa(\lambda pq. q) z 
+	=& (\lambda pq. q) aa\\
+	=& a \\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+	[(\lambda v.vv)(\lambda u. u)] [(\lambda v.v)(\lambda v.w)]
+	=& [(\lambda u.u)(\lambda u. u)](\lambda v.w)\\
+	=&  (\lambda u.u)(\lambda v. w)\\
+	=& (\lambda v. w)
+\end{split}
+\end{equation}
+
+(b) \\
+\texttt{DET -> no}    \\ 
+\texttt{V -> hates} \\
+
+The word \textit{no} is used to say none of the object with characteristic $P$ have the attribute $Q$ (e.g. no tomatoes are pink, there is no human on mars,...). So it can be read has \textit{for all $x$ such that $x$ is $P$, $x$ is not $Q$}.  
+\[
+	\lambda P. \lambda Q. \forall x. P(x) \rightarrow  \neg Q(x)
+\]
+
+When the verb \textit{hates} is used, there is an event $e$:\textit{something is hated}, the event need a \textit{hater} $z$, and a \textit{hatee} $x$
+\[
+	\lambda w. \lambda z. w[\forall x. \exists e~ hates(e) \land hater(e,z) \land hatee(e, x)]
+\]
+\textbf{Parsing tree.}\\
+Let \texttt{A}$\equiv \lambda z.\exists e. ~hates(e)\land hater(e, z) \land hatee(e, COMP550)$\\
+
+The semantis of \texttt{S} is given by
+\begin{equation}
+\begin{split}
+[\lambda Q.& \forall x. student(x)\rightarrow \neg Q(x)](A)\\
+=& \lambda Q. \forall x. student(x)\rightarrow \neg A(x)\\
+=& \lambda Q. \forall x. student(x)\rightarrow \neg [\lambda z.\exists e. ~hates(e)\land hater(e, z) \land hatee(e, COMP550)](x)\\
+=& \lambda Q. \forall x. student(x)\rightarrow \neg [\exists e. ~hates(e)\land hater(e, X) \land hatee(e, COMP550)]\\
+\end{split}
+\end{equation}
+
+\texttt{S}$~~~~<\lambda Q. \forall x. student(x)\rightarrow \neg \exists e. ~hates(e)\land hater(e, X) \land hatee(e, COMP550)>$\\
+\texttt{S -> NP VP}\\
+
+\texttt{NP}$~~~~<\lambda P. \lambda Q. \forall x. student(x)\rightarrow \neg Q(x)>$\\
+\texttt{NP -> DET N}\\
+
+\texttt{DET}$~~~~<\lambda P. \lambda Q. \forall x. P(x)\rightarrow \neg Q(x)>$\\
+\texttt{DET -> no}\\
+
+\texttt{N}$~~~~<\lambda x. student(x)>$\\
+\texttt{N-> student}\\
+
+\texttt{VP}$~~~~<\lambda z.\exists e. ~hates(e)\land hater(e, z) \land hatee(e, COMP550)>$\\
+\texttt{VP -> V PN}\\
+
+\texttt{V}$~~~~<\lambda w. \lambda z. w[\forall x. \exists e~ hates(e) \land hater(e,z) \land hatee(e, x)]>$\\
+\texttt{V -> hates}\\
+
+\texttt{PN}$~~~~<\lambda X. x(COMP550)>$\\
+\texttt{PN -> COMP550}\\
+
+(c) The representation of wants is
+\[
+	\exists e wants(e) \land wanter(e, s_1) \land wantee(e, s_2)
+\]
+
+\textbf{First interpretation}: Start with the predicate \textit{there is an exam $y$ that is wanted by $s_1$} and then \textit{for each student $x$ negate this predicate over $s_1$}
+
+\begin{equation}
+\begin{split}
+	(\lambda Q.& \exists y. exam(y) \land Q(y))(\lambda s_2. \exists e. wants(e) \land wanter(e, s_1) \land wantee(e, s_2))\\ 
+	=& \exists y. exam(y) \land \exists e. want(e) \land wanter(e, s_1) \land wantee(e, y) 
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+(\lambda Q.& \forall x. student(x)\rightarrow \neg Q(x))(\lambda s_1. \exists y. exam(y) \land \exists e. want(e) \land wanter(e, s_1) \land wantee(e, y)) \\
+=& \forall x. student(x) \rightarrow \neg [\lambda s_1.\exists y. exam(y) \land \exists e. want(e) \land wanter(e, s_1) \land wantee(e, y)](x) \\
+=& \forall x. student(x) \rightarrow \neg \exists y. exam(y) \land \exists e. want(e) \land wanter(e, x) \land wantee(e, y) \\
+\end{split}
+\end{equation}
+
+Interpretation 1: There is no exam  anywhere that any students want.\\
+
+\textbf{Second interpretation}: Start with \textit{There is an object $s_2$ that is not wanted by any student $x$} and then replace this object by an exam $y$ that can have the property $Q$ (of not being wanted in that case).
+
+\begin{equation}
+\begin{split}
+(\lambda Q.& \forall x. student(x)\rightarrow \neg Q(x))(\lambda s_1. \exists e. want(e) \land wanter(e, s_1) \land wantee(e, s_2)) \\
+=& \forall x. student(x) \rightarrow \neg (\exists e. want(e)\land wanter(e, x) \land wantee(e, s_2)) \\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+(\lambda Q.& \exists y. exam(y) \land Q(y))(\lambda s_2. \forall x. student(x) \rightarrow \neg (\exists e. want(e)\land wanter(e, x) \land wantee(e, s_2)))\\ 
+=& (\exists y. exam(y)) \land [\forall x. student(x) \rightarrow \neg (\exists e. want(e)\land wanter(e, x) \land wantee(e, y))]
+\end{split}
+\end{equation}
+
+\textbf{Interpretation 2}: There is a particular exam that no student want. 
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
