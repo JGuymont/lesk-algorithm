@@ -32,7 +32,7 @@ def run_baseline_experiment(dev_instances, dev_key):
     
     predictions = [] 
     targets = []
-
+    
     for id, wsd in dev_instances.items():
         lemma = wsd.lemma.decode("utf-8")
         pred = baseline(lemma)
