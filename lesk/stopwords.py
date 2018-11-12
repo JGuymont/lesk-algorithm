@@ -1,0 +1,25 @@
+stopwords = [
+    "didn't", 'be', 'aren', "wasn't", 'no', "haven't", 
+    'needn', 'hasn', 'those', 'll', 'but', 'y', 
+    'they', 'mightn', 'themselves', "you'd", 'itself', 'because', 
+    'there', 'here', 'shan', 'did', 'd', 'had', 'more', 
+    "it's", 'what', 'mustn', 'that', 's', 'his', 'wasn', 
+    'through', 'these', "mightn't", 'each', "hadn't", 've', 'same', 
+    'm', 'was', "should've", 'who', "that'll", 'theirs', 
+    'been', 'all', 'ma', 'very', 'my', 'will', 'by', "wouldn't", 'some', 
+    'are', 'or', 'i', "won't", 'now', 'ourselves', "mustn't", 'off', 
+    'just', 'with', "aren't", 'couldn', 'didn', 'it', 'weren', 'an', 
+    'after', 'up', 'she', 'for', 'than', 'him', "don't", 're', 'we', 'its', 
+    'you', 'yours', 'were', 'any', "hasn't", 'too', "she's", "you've", 'once', 
+    "you're", 'ours', 'the', 'if', 'should', "shouldn't", 'yourself', 'how', 'a', 
+    "weren't", 'is', 'where', "doesn't", 'other', 't', 'only', 'hers', 'has', 'not', 
+    'me', 'isn', 'when', 'them', 'few', 'her', 'don', 'myself', 'as', 'which', 'their', 
+    'above', "shan't", 'haven', 'from', 'again', 'then', 'wouldn', 'such', 'can', 'doing', 
+    'of', 'nor', 'herself', 'while', 'over', 'o', 'have', 'doesn', 'ain', 'our', 'so', 
+    'having', "couldn't", 'himself', 'to', 'most', 'he', 'hadn', 'am', 'why', 
+    "isn't", 'until', 'down', 'at', 'does', 'about', 'whom', 'being', 'out', 'in', 
+    'won', 'your', 'and', "you'll", 'this', 'do', "needn't", 
+    'shouldn', 'on', 'yourselves', "'s",
+    
+    #'want', 'another', 'other', 'such', 'make', 'one', 'in', 'into', 'take', 'due', 'get', "''", ''
+]
